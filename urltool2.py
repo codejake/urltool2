@@ -105,7 +105,7 @@ def print_url(url):
 
     # Parse and dump individual query items.
     queries = parsed_url.query.split('&')
-    print("\tQuery Details:")
+    print("\tQuery details (decoded):")
     for item in queries:
         item_name, item_value = item.split('=')
         print("\t\t", item_name, ':', unquote(item_value))

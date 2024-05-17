@@ -138,13 +138,11 @@ def print_url(url):
     # Print each component of the URL.
     print("")  # Blank line
     print("Proto:", parsed_url.scheme)
-    print("Netloc:", parsed_url.netloc)
 
     # Resolve netloc to an IP or hostname, if possible.
     resolved = get_resolved_dns(parsed_url.netloc)
-    if resolved:
-        print("Netloc resolved:", resolved)
 
+    print("Netloc:", parsed_url.netloc, f"({resolved or ""})")
     print("Path:", parsed_url.path)
     print("Params:", parsed_url.params)
     print("Query:", parsed_url.query)

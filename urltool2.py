@@ -55,6 +55,15 @@ def defang_url(url):
 
 
 def hex_to_bytes(hex_string):
+    '''
+    Converts a string to bytes
+
+            Parameters:
+                    hex_string (str): A byte sequence in string format
+
+            Returns:
+                    bytes.fromhex (bytes): A byte sequence in bytes format
+    '''
     # Convert the hexadecimal string to bytes
     return bytes.fromhex(hex_string)
 

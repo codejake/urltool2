@@ -190,6 +190,7 @@ def print_url(url):
 
 
 if __name__ == "__main__":
+    # Was a command-line argument specified?
     if len(sys.argv) > 1:
         url = sys.argv[1]
     else:

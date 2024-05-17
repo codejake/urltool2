@@ -37,6 +37,15 @@ def bytes_to_string(byte_data, encoding='utf-8'):
 
 
 def defang_url(url):
+    '''
+    Make a URL safe for sharing.
+
+            Parameters:
+                    url (str): A Base64-encoded string
+
+            Returns:
+                    (str): A defanged URL
+    '''
     parsed_url = urlparse(url)
     modified_url = parsed_url._replace(scheme='hxxps')
     modified_netloc = modified_url.netloc.replace('.', '[.]')

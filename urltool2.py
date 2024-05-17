@@ -73,10 +73,10 @@ def parse_url(url):
 
 
 def print_url(url):
-    # Parse the URL
+    # Parse the URL into a URL object.
     parsed_url = urlparse(url)
 
-    # Print each component of the URL
+    # Print each component of the URL.
     print("")  # Blank line
     print("Scheme:", parsed_url.scheme)
     print("Netloc:", parsed_url.netloc)
@@ -84,7 +84,7 @@ def print_url(url):
     print("Params:", parsed_url.params)
     print("Query:", parsed_url.query)
 
-    # Dump individual query items.
+    # Parse and dump individual query items.
     queries = parsed_url.query.split('&')
     print("\tQuery Details:")
     for item in queries:

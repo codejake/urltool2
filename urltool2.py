@@ -53,8 +53,6 @@ def print_url(url):
     for item in queries:
         item_name, item_value = item.split('=')
         print("\t\t", item_name, ':', unquote(item_value))
-        # print("\t\t", item_name, ':', unquote(item_value),
-        #       'Base64 Decoded:', base64_decode_string(item_value))
 
     print("Fragment:", parsed_url.fragment)
     print("Username:", parsed_url.username)

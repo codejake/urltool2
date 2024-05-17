@@ -57,6 +57,15 @@ def defang_url(url):
 
 
 def get_resolved_dns(netloc):
+    '''
+    Resolve netloc to an IP or FQDN as appropriate
+
+            Parameters:
+                    netloc (str): A Base64-encoded string
+
+            Returns:
+                    (str): A resolved record
+    '''
     if is_ip_address(netloc):
         return lookup_ptr(netloc)
     else:

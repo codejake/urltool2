@@ -4,6 +4,7 @@ from urllib.parse import unquote, urlparse, urlunparse
 import base64
 import ipaddress
 import socket
+import sys
 
 
 def base64_decode_string(encoded_string):
@@ -179,7 +180,7 @@ def print_url(url):
     print("\tDecoded query details:")
     for item in queries:
         item_name, item_value = item.split('=')
-        print("\t\t", item_name, ':', unquote(item_value))
+        print("\t\t", item_name, '=', unquote(item_value))
 
     print("Fragment:", parsed_url.fragment)
     print("Username:", parsed_url.username)
@@ -189,7 +190,11 @@ def print_url(url):
 
 
 if __name__ == "__main__":
-    url = input("Enter a URL: ")
+    if len(sys.argv) > 1:
+        url = sys.argv[1]
+    else:
+        url = input("Enter a URL: ")
+
     print_url(url)
     print("")  # Blank line
     print("Defanged:", defang_url(url))

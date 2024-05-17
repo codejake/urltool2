@@ -1,9 +1,9 @@
 # urltool2
 
-A small Python script that helps with repetitive work by parsing and decoding
-URL elements in useful ways. It contains no external dependencies and should 
-run on any platform that supports Python 3, including macOS, Linux, Windows, 
-and WSL.
+A small Python script that helps with repetitive cybersecurity work by parsing 
+and decoding URL elements in useful ways. It contains no external dependencies 
+and should run on any platform that supports Python 3, including macOS, Linux, 
+Windows, and WSL.
 
 I plan on adding more functionality to it during future lunches. See 
 [TODO.md](TODO.md).

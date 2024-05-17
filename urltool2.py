@@ -83,6 +83,15 @@ def parse_url(url):
 
 
 def print_url(url):
+    '''
+    Take a URL as a string and print a bunch of information about it
+
+            Parameters:
+                    url (str): A URL in string format
+
+            Returns:
+                    Prints a bunch of text about that URL.
+    '''
     # Parse the URL into a URL object.
     parsed_url = urlparse(url)
 

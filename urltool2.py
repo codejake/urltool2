@@ -76,7 +76,7 @@ def parse_url(url):
                     url (str): A byte sequence in string format
 
             Returns:
-                    urlparse(url) (tuple): Parse a URL into six components, 
+                    urlparse(url) (tuple): Parse a URL into six components,
                     returning a 6-item named tuple
     '''
     return urlparse(url)

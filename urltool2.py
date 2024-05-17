@@ -25,6 +25,7 @@ def bytes_to_string(byte_data, encoding='utf-8'):
 
             Parameters:
                     byte_data (bytes): Bytes
+                    encoding (string): A text encoding to use. Default: utf-8
 
             Returns:
                     byte_data.decode(encoding)

@@ -69,6 +69,16 @@ def hex_to_bytes(hex_string):
 
 
 def parse_url(url):
+    '''
+    Take a URL as a string and return a URL named tuple
+
+            Parameters:
+                    url (str): A byte sequence in string format
+
+            Returns:
+                    urlparse(url) (tuple): Parse a URL into six components, 
+                    returning a 6-item named tuple
+    '''
     return urlparse(url)
 
 

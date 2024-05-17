@@ -73,6 +73,15 @@ def get_resolved_dns(netloc):
 
 
 def lookup_ptr(ip_address):
+    '''
+    Resolve netloc to an IP or FQDN as appropriate
+
+            Parameters:
+                    ip_address (str): An IP address as a string
+
+            Returns:
+                    (str): A hostname, if resolvable
+    '''
     try:
         # Perform reverse DNS lookup
         host_name, alias_list, ip_list = socket.gethostbyaddr(ip_address)

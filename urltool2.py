@@ -20,6 +20,15 @@ def base64_decode_string(encoded_string):
 
 
 def bytes_to_string(byte_data, encoding='utf-8'):
+    '''
+    Converts bytes to a string
+
+            Parameters:
+                    byte_data (bytes): Bytes
+
+            Returns:
+                    byte_data.decode(encoding)
+    '''
     # Convert the byte data to a string using the specified encoding
     try:
         return byte_data.decode(encoding)

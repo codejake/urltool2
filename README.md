@@ -7,6 +7,13 @@ and WSL.
 
 Feedback appreciated.
 
+## Installation
+
+1. Have a recent version of Python 3 installed on your system.
+
+2. Download `urltool2.py` and run it.
+
+
 ## Usage
 
 ```bash

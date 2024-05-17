@@ -5,6 +5,8 @@ URL elements in useful ways. It contains no external dependencies and should
 run on any platform that supports Python 3, including macOS, Linux, Windows, 
 and WSL.
 
+Plan on adding more functionality to it during future lunches: [[TODO.md]]
+
 Feedback appreciated.
 
 ## Installation

@@ -2,6 +2,8 @@
 
 from urllib.parse import unquote, urlparse, urlunparse
 import base64
+import ipaddress
+import socket
 
 
 def base64_decode_string(encoded_string):
@@ -54,6 +56,25 @@ def defang_url(url):
     return urlunparse(modified_url)
 
 
+def get_resolved_dns(netloc):
+    if is_ip_address(netloc):
+        return lookup_ptr(netloc)
+    else:
+        return resolve_hostname(netloc)
+
+
+def lookup_ptr(ip_address):
+    try:
+        # Perform reverse DNS lookup
+        host_name, alias_list, ip_list = socket.gethostbyaddr(ip_address)
+
+        return host_name
+    except socket.herror:
+        return f"No PTR record found for {ip_address}"
+    except Exception as e:
+        return f"An error occurred: {e}"
+
+
 def hex_to_bytes(hex_string):
     '''
     Converts a string to bytes
@@ -68,6 +89,14 @@ def hex_to_bytes(hex_string):
     return bytes.fromhex(hex_string)
 
 
+def is_ip_address(value):
+    try:
+        ipaddress.ip_address(value)
+        return True
+    except ValueError:
+        return False
+
+
 def parse_url(url):
     '''
     Take a URL as a string and return a URL named tuple
@@ -80,6 +109,17 @@ def parse_url(url):
                     returning a 6-item named tuple
     '''
     return urlparse(url)
+
+
+def resolve_hostname(hostname):
+    try:
+        # Perform DNS lookup
+        ip_address = socket.gethostbyname(hostname)
+        return ip_address
+    except socket.gaierror:
+        return f"Hostname {hostname} could not be resolved"
+    except Exception as e:
+        return f"An error occurred: {e}"
 
 
 def print_url(url):
@@ -99,6 +139,12 @@ def print_url(url):
     print("")  # Blank line
     print("Proto:", parsed_url.scheme)
     print("Netloc:", parsed_url.netloc)
+
+    # Resolve netloc to an IP or hostname, if possible.
+    resolved = get_resolved_dns(parsed_url.netloc)
+    if resolved:
+        print("Netloc resolved:", resolved)
+
     print("Path:", parsed_url.path)
     print("Params:", parsed_url.params)
     print("Query:", parsed_url.query)

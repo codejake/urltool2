@@ -50,7 +50,7 @@ def defang_url(url):
                     (str): A defanged URL
     '''
     parsed_url = urlparse(url)
-    modified_url = parsed_url._replace(scheme='hxxps')
+    modified_url = parsed_url._replace(scheme='hxxps')  # FIXME
     modified_netloc = modified_url.netloc.replace('.', '[.]')
     modified_url = modified_url._replace(netloc=modified_netloc)
     return urlunparse(modified_url)

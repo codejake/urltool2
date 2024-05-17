@@ -97,7 +97,7 @@ def print_url(url):
 
     # Print each component of the URL.
     print("")  # Blank line
-    print("Scheme:", parsed_url.scheme)
+    print("Proto:", parsed_url.scheme)
     print("Netloc:", parsed_url.netloc)
     print("Path:", parsed_url.path)
     print("Params:", parsed_url.params)

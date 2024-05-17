@@ -108,6 +108,15 @@ def hex_to_bytes(hex_string):
 
 
 def is_ip_address(value):
+    '''
+    Determine whether value is an IP address or not
+
+            Parameters:
+                    value (str): A string
+
+            Returns:
+                    (bool): Is value an IP address or not?
+    '''
     try:
         ipaddress.ip_address(value)
         return True

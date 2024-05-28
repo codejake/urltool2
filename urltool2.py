@@ -2,7 +2,6 @@
 
 from urllib.parse import unquote, urlparse, urlunparse
 import base64
-import config
 import ipaddress
 import socket
 import sys

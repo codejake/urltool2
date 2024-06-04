@@ -193,7 +193,10 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:  # Was a command-line argument specified?
         url = sys.argv[1]
     else:  # A command-line argument was not specified, so ask.
-        url = input("Enter a URL: ")
+        try:
+            url = input("Enter a URL: ")
+        except EOFError:
+            pass
 
     print_url(url)
     print("")  # Blank line
